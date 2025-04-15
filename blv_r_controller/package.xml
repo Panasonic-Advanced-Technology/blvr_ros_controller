@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>blv_r_controller</name>
+  <version>1.0.0</version>
+  <description>The Oriental motor BLV series R type controller package</description>
+
+  <maintainer email="atmobi.support@ml.jp.panasonic.com">Panasonic Advanced Technology Development Co.,Ltd.</maintainer>
+
+  <license>MIT</license>
+
+  <build_depend>message_generation</build_depend>
+
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>nodelet</depend>
+  <depend>topic_tools</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf_conversions</depend>
+  <depend>nav_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>robot_driver_msgs</depend>
+  <depend>robot_driver_fw</depend>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>message_runtime</exec_depend>
+
+</package>

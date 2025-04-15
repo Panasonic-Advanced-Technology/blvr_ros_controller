@@ -1,0 +1,3 @@
+---
+int32 result                      # 処理結果
+robot_driver_msgs/MotorStatus[] status  # 各モーター状態
