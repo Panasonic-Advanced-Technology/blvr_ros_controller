@@ -1,0 +1,4 @@
+robot_driver_msgs/MotionParam linear
+robot_driver_msgs/MotionParam angular
+---
+int32   result

@@ -1,0 +1,67 @@
+<launch>
+    <node pkg="blv_r_controller" type="blv_r_mecanum_controller" name="blv_r_mecanum_controller" output="$(optenv ATMOBI_LOG_TARGET screen)" >
+        <remap from="~/cmd_vel" to="/cmd_vel" />
+        <remap from="~/odom" to="/odom" />
+        <remap from="~/cmd_pos" to="/cmd_pos" />
+        <remap from="~/emg_status" to="/emg_status" />
+        <remap from="~/estop" to="/estop" />
+        <remap from="~/reset" to="/reset_motor" />
+        <remap from="~/config_set_pos" to="/config_set_pos" />
+        <remap from="~/get_status" to="/get_status" />
+        <remap from="~/control_excitation" to="/control_excitation" />
+        <rosparam>
+            device_path: /dev/ttyUSB0
+            baudrate: 115200
+            parity: even
+            stop_bit: 1
+            right_id: 1
+            left_id: 2
+            rear_right_id: 3
+            rear_left_id: 4
+            global_id: 15
+            set_rpm_timeout: 0.22
+            auto_excitation_off: false
+            excitation_off_sec: 0.5
+            left_forward_rotation_is_positive: true
+            right_forward_rotation_is_positive: false
+            torque_in_vel_controlling: 1000
+            torque_in_positioning: 1000
+            gear_ratio: 15.0
+            wheel_size: 0.12
+            tread_width: 0.449
+            wheel_base: 0.55
+            acc_in_vel_controlling: 0.89
+            dec_in_vel_controlling: 1.9
+            velocity_updating_interval: 0.05
+            encoder_polling_interval: 0.025
+            status_polling_interval: 0.05
+            linear_vel_in_set_position: 0.5
+            linear_acc_in_set_position: 1.0
+            linear_dec_in_set_position: 1.0
+            angular_vel_in_set_position: 1.0
+            angular_acc_in_set_position: 2.0
+            angular_dec_in_set_position: 2.0
+        </rosparam>
+    </node>
+    <rosparam>
+        teleop_twist_joy:
+            reset_button_1: 4
+            reset_button_2: 5
+            reset_button_3: 6
+            reset_button_4: 7
+            reset_button_5: 7
+            reset_button_6: 7
+            excitation_button_1: 8
+            excitation_button_2: 9
+            setpos_linear_axes: 5
+            setpos_linear_y_axes: 4
+            setpos_left_turn_button: 0
+            setpos_right_turn_button: 3
+            setpos_trigger_button: 7
+            setpos_cancel_button: 6
+            setpos_linear_meter: 0.1
+            setpos_linear_y_meter: 0.1
+            setpos_angular_rad: 1.5707963
+    </rosparam>
+</launch>
+
